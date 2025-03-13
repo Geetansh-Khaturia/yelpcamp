@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3"><label class="form-label" for="title">Title</label><input class="form-control"
+                        type="text" id="title" name="campground[title]" required>
+                    <div class="valid-feedback">Looks Good!!</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Lacoation</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" required>
+                    <div class="valid-feedback">Looks Good!!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Campground Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" placeholder="0.00" aria-label="price"
+                            name="campground[price]" id="price" aria-describedby="price-label" required>
+                        <div class="valid-feedback">Looks Good!!</div>
+                    </div>
+                </div>
+                <div class="mb-3"><label class="form-label" for="description">Description</label><textarea
+                        class="form-control" id="description" name="campground[description]" required></textarea>
+                    <div class="valid-feedback">Looks Good!!</div>
+                </div>
+                <input type="file" name="image" id="" multiple>
+                <!-- <div class="mb-3"><label class="form-label" for="image">Image URL</label><input class="form-control"
+                        type="text" id="image" name="campground[image]" required>
+                    <div class="valid-feedback">Looks Good!!</div>
+                </div> -->
+                <div class="mb-3">
+                    <button class="btn btn-primary">Add Campground</button>
+                    <a href="/campgrounds" class="btn btn-info ">All Campgrounds</a>
+                </div>
+            </form>
+        </div>
+    </div>
