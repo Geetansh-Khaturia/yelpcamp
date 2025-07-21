@@ -1,7 +1,9 @@
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/stylesheets/stars.css">
+
     <div class="row">
         <div class="col-6">
+            
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <% foundCamp.images.forEach((img,i)=> { %>
@@ -10,18 +12,18 @@
                         </div>
                         <% }) %>
                 </div>
-                <% if(foundCamp.images.length > 1) { %>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <% } %>
+                <% if(foundCamp.images.length> 1) { %>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <% } %>
             </div>
             <div class="card mb-2">
 
@@ -60,6 +62,7 @@
         </div>
 
         <div class="col-6">
+            <div id="map" style="width: 400px; height: 300px;"></div>
             <% if(currentUser) {%>
                 <h2 class="pb-2">Leave a Review</h2>
                 <form action="/campgrounds/<%= foundCamp._id %>/reviews" class="mb-3 needs-validation" method="POST"
@@ -124,3 +127,8 @@
         </div>
 
     </div>
+    <script>
+        const maptilerApiKey = '<%= MAPTILER_API_KEY %>';
+        const campground = <%- JSON.stringify(foundCamp) %>;
+    </script>
+    <script src="/javascripts/showPageMap.js"></script>

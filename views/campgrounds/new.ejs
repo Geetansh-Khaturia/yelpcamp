@@ -25,11 +25,18 @@
                         class="form-control" id="description" name="campground[description]" required></textarea>
                     <div class="valid-feedback">Looks Good!!</div>
                 </div>
-                <input type="file" name="image" id="" multiple>
                 <!-- <div class="mb-3"><label class="form-label" for="image">Image URL</label><input class="form-control"
                         type="text" id="image" name="campground[image]" required>
                     <div class="valid-feedback">Looks Good!!</div>
                 </div> -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add image(s)...</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="image" multiple>
+                        <label class="custom-file-label" for="image">Choose image(s)...</label>
+                    </div>
+                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-primary">Add Campground</button>
                     <a href="/campgrounds" class="btn btn-info ">All Campgrounds</a>
